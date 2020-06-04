@@ -1,0 +1,853 @@
+@keyframes clicked {
+	0%,
+	100% {
+		transform: scale(1)
+	}
+	50% {
+		transform: scale(0.8)
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Google Sans';
+	cursor: default;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+	text-decoration: none
+}
+
+.input-page-wrapper {
+	height: calc(100vh - 48px);
+	padding: 24px;
+	overflow: hidden;
+	touch-action: auto;
+}
+
+.input-page-wrapper h1.app-title {
+	position: fixed;
+	font-size: 20px;
+	color: #0f8e98;
+	font-weight: 400;
+	display: inline-block;
+	margin-left: 52px;
+	letter-spacing: 1px;
+	line-height: 40px
+}
+
+.input-page-wrapper img.app-logo {
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	float: left
+}
+
+.input-page-wrapper .input-data-wrapper {
+    position: relative;
+    display: inline-block;
+    top: 62%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    max-width: 344px;
+    margin: 0px auto;
+    display: block;
+    min-width: 272px;
+}
+
+.input-page-wrapper .input-data-wrapper::before {
+	content: "";
+    position: absolute;
+    top: -18rem;
+    left: 43%;
+    margin-left: -68px;
+    z-index: -1;
+	width: 32rem; 
+    height: 550px;
+	background-image: url(../assets/icono.svg); 
+    background-repeat: no-repeat;
+}
+
+.input-page-wrapper .input-data-wrapper .input-title {
+	color: #0f8e98;
+	font-size: 20px;
+	font-weight: 400;
+	text-align: initial;
+	margin-bottom: 16px;
+	display: inline-block
+}
+
+.input-page-wrapper .input-data-wrapper input.search {
+	width: 100%;
+	height: 48px;
+	padding: 10px;
+	box-sizing: border-box;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	border: 0;
+	border-radius: 2px;
+	outline: 0
+}
+
+.input-page-wrapper .input-data-wrapper .btn-wrapper button.sub-btn,
+.input-page-wrapper .input-data-wrapper .btn-wrapper button.find-location {
+	border-radius: 50px;
+	background: #fff;
+	border: 0;
+	outline: 0;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	font-size: 14px;
+	font-weight: 500;
+	padding: 6px;
+	margin-top: 16px;
+	height: 52px;
+	overflow: hidden
+}
+
+.input-page-wrapper .input-data-wrapper .btn-wrapper button.sub-btn svg,
+.input-page-wrapper .input-data-wrapper .btn-wrapper button.find-location svg {
+	float: left;
+	padding: 8px;
+	background: #0bacb9;
+	border-radius: 50%;
+	transition: box-shadow 0.12s ease-in-out, transform 0.2s ease-in-out
+}
+
+.input-page-wrapper .input-data-wrapper .btn-wrapper button.sub-btn svg path,
+.input-page-wrapper .input-data-wrapper .btn-wrapper button.find-location svg path {
+	fill: white
+}
+
+.input-page-wrapper .input-data-wrapper .btn-wrapper button.sub-btn .btnClicked,
+.input-page-wrapper .input-data-wrapper .btn-wrapper button.find-location .btnClicked {
+	animation: clicked 0.5s ease-in-out infinite
+}
+
+.input-page-wrapper .input-data-wrapper .btn-wrapper button.sub-btn:hover svg,
+.input-page-wrapper .input-data-wrapper .btn-wrapper button.find-location:hover svg {
+	box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6)
+}
+
+.input-page-wrapper .input-data-wrapper .btn-wrapper button.sub-btn .btn-title,
+.input-page-wrapper .input-data-wrapper .btn-wrapper button.find-location .btn-title {
+	color: #0f8e98
+}
+
+/*BTN INICIO*/
+.footer{
+    color: white;
+    text-align: left;
+    position: absolute;
+    bottom: 2rem;
+    left: 1rem;
+    width: auto;
+    right: 1rem;
+    border-radius: 1rem;
+}
+
+#panelIniciarRuta{
+	height: 5rem;
+    line-height: 50px;
+	background: rgba(110,110,110,0.3);
+	border-radius: 1rem;
+}
+.footer button.sub-btn{
+	margin-left: 1rem;
+	border-radius: 50px;
+	background: #fff;
+	border: 0;
+	outline: 0;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	font-size: 14px;
+	font-weight: 500;
+	padding: 6px;
+	margin-top: 16px;
+	height: 52px;
+	overflow: hidden;
+	width: 9rem;
+}
+
+.footer button.sub-btn svg {
+	float: left;
+	padding: 8px;
+	background: #0bacb9;
+	border-radius: 50%;
+	transition: box-shadow 0.12s ease-in-out, transform 0.2s ease-in-out
+}
+
+.footer button.sub-btn svg path{
+	fill: white
+}
+
+.footer button.sub-btn .btnClicked {
+	animation: clicked 0.5s ease-in-out infinite
+}
+
+.footer button.sub-btn:hover svg {
+	box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6)
+}
+
+.footer button.sub-btn .btn-title {
+	color: #0f8e98;
+	font-size: 14px;
+    font-weight: 500;
+    margin: 10px;
+    line-height: 40px;
+}
+
+.input-page-wrapper .input-data-wrapper .btn-wrapper span {
+	color: white;
+	font-size: 14px;
+	font-weight: 500;
+	margin: 10px;
+	line-height: 40px
+}
+
+.input-page-wrapper .input-data-wrapper button:active {
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)
+}
+
+.app-bar {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 64px;
+	padding: 12px;
+	box-sizing: border-box;
+	z-index: 1;
+	overflow: hidden
+}
+
+.app-bar svg.back-btn,
+.app-bar svg.menu-btn {
+	float: left;
+	padding: 8px;
+	border-radius: 50%;
+	background:  rgba(15, 142, 152, 0.2);
+	transition: background 0.12s ease-in-out;
+}
+
+.app-bar svg.back-btn path,
+.app-bar svg.menu-btn path {
+	fill: #fff
+}
+
+.app-bar svg.back-btn:hover,
+.app-bar svg.menu-btn:hover {
+	background: rgba(255, 255, 255, 0.3)
+}
+
+.app-bar svg.menu-btn {
+	float: right
+}
+
+.app-bar h1 {
+	font-size: 20px;
+	color: #0f8e98;
+	font-weight: 400;
+	display: inline-block;
+	margin: 8px
+}
+
+html, body, h3, ul, option, #main, #viewDiv  {
+	color: #0f8e98;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html, body, #main, #viewDiv,  #tools2 {
+    height: 100%;
+    width: 100%;
+}
+#viewDiv{
+	height: 100%;
+	width: 100%;
+	font-size: small;
+	background-color: white;
+}
+
+#viewDiv,  #tools2 {
+	position: absolute;
+}
+
+#centerView  {
+	margin-top: 0.5rem;
+    background: white;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+#routes {
+    height:30px;
+    margin-top: 5px;
+    overflow: hidden;
+    position:relative;
+    width: 100%;
+}
+
+#routes select {
+   border: none;
+   font-size: 14px;
+   height: 30px;
+   padding: 5px;
+   width: 100%;
+}
+
+#routes select option{
+   color: rgb(150, 150, 150);
+}
+
+#routes select:focus{ 
+    outline: none;
+}
+
+#routes::after{
+    background-color:#ccc;
+    content:"\025be";
+    display:table-cell;
+    padding-top:7px;
+    text-align:center;
+    width:30px;
+    height:23px;
+    position:absolute;
+    top:0;
+    right:0px;  
+    pointer-events: none;
+}
+
+#removeRoutes i {
+    color: rgb(190, 0, 0);
+    float: left;
+    font-size: 40px;
+    border-radius: 50%;
+    transition: box-shadow 0.12s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#infoDiv {
+    position: absolute;
+    top: 6rem;
+    left: 1rem;
+  }
+
+
+.esri-ui-corner {
+    max-width: 100%;
+    top: 13rem;
+}
+
+.app-bar svg.back-btn,
+.app-bar svg.menu-nav-btn {
+    border-radius: 3px;
+    float: left;
+    padding: 8px;
+    transition: background 0.12s ease-in-out;
+    background: #0bacb9;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.app-bar svg.back-btn path,
+.app-bar svg.menu-nav-btn path {
+	fill: #fff
+}
+
+.app-bar svg.back-btn:hover,
+.app-bar svg.menu-nav-btn:hover {
+	background:#0f8e98;
+}
+
+.app-bar svg.menu-nav-btn {
+	float: right
+}
+
+#routeSelector,#routeSelector2 {
+	width: 100%;
+    height: 48px;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    border: 0;
+    border-radius: 2px;
+	outline: 0;
+	color: #100000;
+	font-size: small;
+}
+#routeSelector, #kmSelector {
+	height: 37px;
+	margin-bottom: 1rem;
+}
+#kmSelector {
+	margin-left: 1rem;
+	width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    border: 0;
+    border-radius: 2px;
+	outline: 0;
+	color: #100000;
+	font-size: small;
+}
+
+.span-title{
+    color: #2e2e2e;
+    font-size: small;
+	margin-left: 1rem;
+}
+#tools2 {
+    height: 40px;
+	top: 11rem;
+	left: 1rem;
+	width: auto;
+}
+#activarVoz{
+    width: 100%;
+  
+}
+.btnVolume{
+	font-size: medium;
+    float: right;
+    background: white;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+	border: 0;
+    outline: 0;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+.btnVolume:hover{
+	background-color: #f0f0f0;
+    color: #2e2e2e;
+}
+
+.iconos_map{
+	float:right; 
+	font-size: 16px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+i:hover{
+	color: #0f8e98;
+}
+
+i:active{
+	color: #0f8e98;
+}
+
+#typeTransport{
+	display: inline-flex;
+	padding-top: 1rem;
+	width: 100%;
+}
+
+.seccionToggle {
+	display: none;
+	height: calc(100vh - 50px);
+	background: #fff;
+	color: #001F3F;
+	padding: 50px 0;
+	text-align: center; 
+}
+
+.seccionToggle h2 {
+	font-size: 24px;
+	margin-top: 50px; 
+}
+
+.seccionToggle p {
+	font-size: 14px;
+	margin-bottom: 50px; 
+}
+
+.seccionToggle button {
+	background: none;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 20px 40px;
+	display: inline-block;
+	border: 5px solid #001F3F;
+	transition: 0.3s all ease; 
+}
+
+.seccionToggle button:hover {
+	border: 5px solid #0074D9;
+	color: #0074D9; 
+}
+  
+.btn-toggle {
+	height: 50px;
+	line-height: 50px;
+	font-size: 24px;
+	font-weight: bold;
+	color: #000;
+	display: block;
+	background: #0f8e98;
+	text-align: center; 
+}
+
+.btn-toggle:hover {
+	text-decoration: none; 
+}
+  
+@media screen and (max-width: 500px) {
+	#viewDiv {
+		height: 100%;
+	}
+
+	.seccionToggle h2 {
+	  margin-top: 0; 
+	} 
+}
+
+@media screen and (max-height: 550px) {
+	.seccionToggle h2 {
+		font-size: 40px;
+		margin-top: 0; 
+	} 
+}
+  
+#btnDesplegable{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: white;
+	text-align: center;
+}
+
+#fa-caret{
+	color:white;
+}
+
+.fa-question-circle{
+	z-index: 1111111;
+	position: relative;
+    float: right;
+    color: rgba(110,110,110,0.5);
+}
+
+.fa-question-circle:hover{
+    color: #ccc;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+	float: left;
+	width: 30.33%;
+	padding: 15px;
+}
+  
+  /* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+	.column {
+	  	width: 90%;
+	}
+}
+
+.seccionAyuda{
+    width: 100%;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel {  /*slider */
+	position: relative;
+}
+
+.carousel .carousel-indicators {	/* indicator wrapper*/
+	position: absolute;
+	bottom: 0;
+	left:0px;
+	width: 100%;
+  	margin: 0;
+  	left: 0;
+ 	right: 0;
+ 	width: 100%;
+}
+
+#headcarousel_container .carousel-indicators li { /* indicators*/
+	width: 10px;
+   	height: 10px;
+   	border-radius: 100%;
+}
+
+#headcarousel_container .carousel-indicators li.active {
+	background-color:#0f8e98 ;/* changes indicators color when it is active*/ 
+}
+
+.carousel .carousel-inner .item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.carousel .carousel-indicators li {
+	width: 10px;
+	height: 10px;
+   	border-radius: 100%;
+ }
+
+ .carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 40rem!important;
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	width: 40%;
+}
+  
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+  
+.container {
+	padding: 2px 16px;
+}
+
+.cards-list {
+	z-index: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+  
+.card {
+	margin: 30px auto;
+	width: 300px;
+	border-radius: 40px;
+	box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+	cursor: pointer;
+	transition: 0.4s;
+}
+  
+.card .card_image {
+	width: inherit;
+	height: inherit;
+	border-radius: 40px;
+}
+  
+.card .card_image img {
+	width: inherit;
+	height: inherit;
+	border-radius: 40px;
+	object-fit: cover;
+}
+  
+.card .card_title {
+	text-align: center;
+	border-radius: 0px 0px 40px 40px;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	margin-top: -80px;
+	height: 40px;
+}
+  
+.card:hover {
+	transform: scale(0.9, 0.9);
+	box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+  
+.title-white {
+	color: white;
+}
+  
+.title-black {
+	color: black;
+}
+  
+@media all and (max-width: 500px) {
+	.card-list {	 
+	  	flex-direction: column;
+	}
+}
+
+#panelBusqueda{
+	margin: 1rem;
+	margin-top: 2rem;
+}
+
+.jsPanel .jsPanel-hdr{
+	background-color: #ffffff!important;
+}
+  
+#divBusquedaRuta button.sub-btn{
+	float: right;
+	margin-left: 1rem;
+	border-radius: 50px;
+	background: #fff;
+	border: 0;
+	outline: 0;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	font-size: 14px;
+	font-weight: 500;
+	padding: 6px;
+	margin-top: 16px;
+	height: 52px;
+	overflow: hidden;
+	width: 9rem;
+}
+
+#divBusquedaRuta button.sub-btn svg {
+	float: left;
+	padding: 8px;
+	background: #0bacb9;
+	border-radius: 50%;
+	transition: box-shadow 0.12s ease-in-out, transform 0.2s ease-in-out
+}
+
+#divBusquedaRuta button.sub-btn svg path{
+	fill: white
+}
+
+#divBusquedaRuta button.sub-btn .btnClicked {
+	animation: clicked 0.5s ease-in-out infinite
+}
+
+#divBusquedaRuta button.sub-btn:hover svg {
+	box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6)
+}
+
+#divBusquedaRuta button.sub-btn .btn-title {
+	color: #0f8e98;
+	font-size: 14px;
+    font-weight: 500;
+    margin: 10px;
+    line-height: 40px;
+}
+
+.panelDeslizante {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+  }
+  
+.block-1 {
+	display: flex;
+	flex-direction: column;
+	background-color: #f5f5f5;
+	resize: vertical; /* resize vertical */
+	overflow: auto; /* resize works for overflow other than visible */
+	height: 60%;
+}
+  
+.block-2 {
+	touch-action: "pan-down";
+    background-color: white;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    position: absolute;
+	width: 100%;
+	border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px;
+	height: 40%;
+}
+  
+.slider {
+	touch-action: "pan-down";
+   	width: 100%;
+	height: 12px;
+	text-align: center;
+	letter-spacing: 10px;
+	cursor: row-resize;
+	user-select: none; 
+	z-index: 111111111111113;
+    position: absolute;
+}
+
+.slider1{
+	touch-action: "pan-down";
+	text-align: center;
+	background-color: #0f8e98;
+	border: 1px solid #e0e0e0;
+	margin: auto;
+	top: 1;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 6px;
+    width: 50px;
+    border-radius: 10px;
+	z-index: 111111111111111;
+    position: absolute;
+}
+
+#accordion{
+	width:500px;
+}
+  
+.panel, .encabezado{
+	background: white;
+	border: 0 none;
+	padding: 10px;
+	box-sizing: border-box;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	border: 0;
+	border-radius: 2px;
+	position: relative;
+}
+
+.encabezado{
+	padding:10px;
+}
+  
+.encabezado:hover{
+	background: #f0f0f0;
+}
+
+.grantPermissions {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    z-index: 11111111;
+}
+.grantPermissions h1 {
+	text-align: center
+}
+
+.grantPermissions i {
+	color: #0f8e98;
+	font-size: 50px;
+	margin-bottom: 10px;
+}

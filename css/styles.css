@@ -1,0 +1,81 @@
+html, body, h3, ul, option, #main, #viewDiv, #tools {
+    color: rgb(240, 240, 240);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html, body, #main, #viewDiv, #tools {
+    height: 100%;
+    width: 100%;
+}
+
+i {
+    color: rgb(125, 125, 125);
+    font-size: 20px;
+}
+
+#viewDiv, #tools {
+    position: absolute;
+}
+
+#tools {
+    background-color: rgba(200, 200, 200, 0.5);
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+}
+
+#routes {
+    height:30px;
+    margin-top: 5px;
+    overflow: hidden;
+    position:relative;
+    width: 100%;
+}
+
+#routes select {
+   border: none;
+   font-size: 14px;
+   height: 30px;
+   padding: 5px;
+   width: 100%;
+}
+
+#routes select option{
+   color: rgb(150, 150, 150);
+}
+
+#routes select:focus{ 
+    outline: none;
+}
+
+#routes::after{
+    background-color:#ccc;
+    content:"\025be";
+    display:table-cell;
+    padding-top:7px;
+    text-align:center;
+    width:30px;
+    height:23px;
+    position:absolute;
+    top:0;
+    right:0px;  
+    pointer-events: none;
+}
+
+#infoDiv {
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+  }
+
+#infoDiv input {
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px;
+}
+
+.esri-ui-corner {
+    max-width: 100%;
+    top: 5rem;
+}
