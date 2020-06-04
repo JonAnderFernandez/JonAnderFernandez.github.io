@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+        <link rel="shortcut icon" href="favicon.svg">
+        <title>[TEST] Routes Map</title>
+        <meta name="description" content="PWA Rutas Bici">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="theme-color" content="#0f8993" />
+        <link rel="manifest" href="manifest.json">
+        <!-- FAVICON -->
+        <link href="assets/favicon.svg" rel="icon" sizes="192x192">
+        <link rel="shortcut icon" href="assets/favicon.svg">
+        <link rel="apple-touch-icon" href="assets/favicon.svg">
+        <!-- FONTAWESOME -->
+        <link href="https://fonts.googleapis.com/css?family=Google+Sans:500,700" rel="stylesheet">
+        <!-- STYLES -->
+        <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/ayuda.css">
+        <!-- SCRIPTS -->
+        <script src="js/jquery_3_3_1.min.js"></script>
+        <script src="js/bootstrap.3.4.0.min.js"></script>
+    </head>
+    <body>
+        <!-- PERMISSION REQUEST PAGE -->
+        <div id="grantPermissions" class="grantPermissions">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h1>GEOLOCATION AND NOTIFICATION</h1>
+            <h1>PERMISSIONS ARE NEEDED</h1>
+        </div>
+        <!-- MAIN PAGE -->
+        <div class="input-page-wrapper">
+            <img src="assets/logo.svg" alt="all-logo" class="app-logo">
+            <h1 class="app-title">Routes Map</h1>
+            <i class="fas fa-question-circle " aria-hidden="true" id="btnHelp"></i>
+            <div id="data-wrapper" class="input-data-wrapper">
+                <span class="input-title">Selecciona una ruta</span>
+                <select id="routeSelector2" class="input-title">
+                    <option value="">Selecciona una ruta...</option>
+                </select>
+                <br>
+                <div class="btn-wrapper">
+                    <button id="btnBuscar" class="sub-btn" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 50 50" width="24px"
+                            height="24px">
+                            <path
+                                d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z">
+                            </path>
+                        </svg>
+                        <span class="btn-title">BUSCAR</span>
+                    </button>
+                    
+                    <button class="find-location" style="float:right;">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                            <path fill="#000000"
+                                d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+                        </svg>
+                        <span class="btn-title">MI UBICACIÓN</span>
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+
+        <section class="seccionToggle">
+            <div class="wrap">
+                <div class="row">
+                    <div class="column">
+                        <h2>Column</h2>
+                        <p>Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="seccionAyuda" style="display:none">
+            <div class="panelAyuda">
+                <!-- multistep form -->
+                <form id="msform">
+                    <!-- progressbar -->
+                    <ul id="progressbar">
+                        <li class="active">Inicio</li>
+                        <li>Mapa</li>
+                        <li>Opciones</li>
+                        <li>Preguntas</li>
+                    </ul>
+                    <!-- fieldsets -->
+                    <fieldset>
+                        <h2 class="fs-title">Inicio</h2>
+                        <h3 class="fs-subtitle">Pagina de inicio </h3>
+                        <img src="img/mockup_4.png" style="width: 80%;" />
+
+                        <input type="button" name="next" class="next action-button" value=">" />
+                    </fieldset>
+                    <fieldset>
+                        <h2 class="fs-title">Mapa</h2>
+                        <h3 class="fs-subtitle">Visualización de mapa en 2D/3D</h3>
+                        <img src="img/mockup_3.jpg" style="width: 100%;" />
+                        <input type="button" name="previous" class="previous action-button" value="Anterior" />
+                        <input type="button" name="next" class="next action-button" value="Siguiente" />
+                    </fieldset>
+                    <fieldset>
+                        <h2 class="fs-title">Opciones</h2>
+                        <h3 class="fs-subtitle">Filtros para avisos según la selección de movilidad (bici, a pie)</h3>
+                        <img src="img/mockup_5.png" style="width: 80%;" />
+                        <input type="button" name="previous" class="previous action-button" value="<" />
+                        <input type="button" name="next" class="next action-button" value=">" />
+                    </fieldset>
+                    <fieldset>
+                        <h2 class="fs-title">Preguntas</h2>
+                        <h3 class="fs-subtitle">Preguntas</h3>
+                        <!-- <img src="img/inicio.svg" style="width: 80%;" /> -->
+                        <h3 class="fs-subtitle">collapse con dudas..</h3>
+                      
+                        <input type="button" name="previous" class="previous action-button" value="<" />
+                        <!-- <input type="submit" name="submit" class="submit action-button" value="Submit" /> -->
+                    </fieldset>
+                </form>
+            </div>
+
+        </section>
+        <!-- mapa -->
+        <div id="viewDiv" style="display:none"></div>
+        <div id="infoDiv" style="display:none">
+            <input class="esri-component esri-widget--button esri-widget esri-interactive" type="button" id="switch-btn"
+                value="3D" />
+            <div id="centerView">
+                <i class="fas fa-street-view"></i>
+            </div>
+        </div>
+
+        <!-- MENU HERRAMIENTAS -->
+        <!-- barra -->
+        <div class="app-bar" style="display:none">
+            <svg id="back-btn" class="back-btn" style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path fill="#000000" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+            </svg>
+            <h1 id="route-name"></h1>
+            <svg id="menu-nav-btn" class="menu-nav-btn" style="width:24px;height:24px;fill:#000000;"
+                xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                <path
+                    d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z">
+                </path>
+            </svg>
+        </div>
+
+        <div id="tools2">
+            <div id="activarVoz" style="display:none">
+                <div class="btnVolume">
+                    <i class="fas fa-volume-up iconos_map" id="fa-volume"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER BARRA DE INICIAR RUTA | NOTIFICACIONES -->
+        <div id="footer" class="footer" style="display:none">
+
+            <div id="btnDesplegable" style="display:none">
+                <p><a href="#" id="btn-toggle" class="btn-toggle"><i class="fas fa-caret-up" id="fa-caret"></i></a></p>
+            </div>
+
+            <div id="panelIniciarRuta">
+                <button class="sub-btn" type="button" id="btnIniciar">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="#000000" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+                    </svg>
+                    <span class="btn-title">Iniciar</span>
+                </button>
+
+                <span class="span-title">Distancia</span><span class="span-title" id="distancia"></span>
+            </div>
+
+        </div>
+        </div>
+        <div class="panelDeslizante" id="panelDeslizante" style="display:none">
+            <div class="block block-1">
+            </div>
+            <div class="slider">
+                <div class="slider1"> </div>
+            </div>
+            <div class="block block-2">
+                <div id="panelBusqueda" style="display:block">
+                    <span class="input-title">Selecciona una ruta </span>
+                    <select id="routeSelector" class="input-title">
+                        <option value="">Selecciona una ruta...</option>
+                    </select>
+                    <br>
+                    <span class="input-title">Selecciona el tipo de movilidad </span>
+                    <div id="typeTransport">
+                        <i class="fas fa-walking"></i>
+                        <i class="fas fa-biking"></i>
+                        <select id="kmSelector" class="input-title">
+                            <option data-metros="100">100</option>
+                            <option data-metros="200">200</option>
+                            <option data-metros="300">300</option>
+                        </select>
+                        <br>
+                    </div>
+
+                    <div id="divBusquedaRuta">
+                        <button class="sub-btn" type="button" id="btnBusquedaRuta">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                            <path fill="#000000" d="M2,21L23,12L2,3V10L17,12L2,14V21Z"></path>
+                        </svg>
+                        <span class="btn-title">Buscar</span>
+                        <button class="sub-btn" type="button" id="removeRoutes">
+                        <i class="far fa-times-circle"></i>
+                        <span class="btn-title">Limpiar</span>
+                    </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCRIPTS -->
+        <script src="https://js.arcgis.com/4.15/"></script>
+        <script src="js/fontawesome.js"></script>
+        <script src="configs.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/index.js"></script>
+        <script src="js/jquery.easing.min.js"></script>
+    </body>
+</html>
