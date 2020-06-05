@@ -228,7 +228,7 @@ const loadKML = kmlFile => {
                                     type  : 'polyline', 
                                 },
                                 symbol   : {
-                                    style : 'short-dash',
+                                    style : 'short-dot',
                                     color : color,
                                     type  : 'simple-line',
                                     width : 3,
