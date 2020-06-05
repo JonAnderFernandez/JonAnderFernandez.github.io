@@ -354,10 +354,10 @@ const notifyPointsOfInterest = () => {
                         }) == minDistance;
                     });
 
-                    let approchingPointsStr = `${nearerPoint[0].description}`;
+                    let approchingPointsStr = `${nearerPoint[0].description}. Puntos cercanos:`;
                     approchingPoints.forEach( p => {
                         if(p.id != nearerPoint[0].id){
-                            approchingPointsStr += `\n'${p.name}' a ${
+                            approchingPointsStr += `\n\t·'${p.name}' a ${
                                 calculateDistance(userLocation, {
                                     'longitude' : p.coordinates[0],
                                     'latitude'  : p.coordinates[1]
