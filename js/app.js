@@ -366,78 +366,50 @@ const notifyPointsOfInterest = () => {
                         }
                     });
 
+                    let notificationTitle = `'${nearerPoint[0].name.toUpperCase()}' A ${minDistance.toFixed(2)} METROS`;
                     let options = {
                         body: `${approchingPointsStr}`,
-                        // icon: '../assets/512x512.svg'
-                        silent: true
+                        icon: '../assets/512x512.svg'
+                        // silent: true
                     }
 
+                    let notify = false;
             		let snd;                     
                     if (inRangeS && !shortRangeNotified){
-                        // new Notification(`'${nearerPoint[0].name.toUpperCase()}' A ${minDistance.toFixed(2)} METROS`, options);
             		    snd = (nearerPoint[0].type === 'warning') ? new Audio('/audio/warning100m.mp3') : new Audio('/audio/100m.mp3');
                         shortRangeNotified = true;
                         mediumRangeNotified = false
                         longRangeNotified = false
 
-
-	                    navigator.serviceWorker.ready.then(function(registration) {
-					        registration.showNotification('Vibration Sample 1', {
-					          	body: 'Buzz! Buzz!',
-					          	icon: '../images/touch/chrome-touch-icon-192x192.png',
-					          	vibrate: [200, 100, 200, 100, 200, 100, 200],
-					          	tag: 'vibration-sample'
-					        });
-					    });
-
+                        notify = true;
 
                     } else if (inRangeM && !mediumRangeNotified){
-                        // new Notification(`'${nearerPoint[0].name.toUpperCase()}' A ${minDistance.toFixed(2)} METROS`, options);
             		    snd = (nearerPoint[0].type === 'warning') ? new Audio('/audio/warning200m.mp3') : new Audio('/audio/200m.mp3');
                         shortRangeNotified = false;
                         mediumRangeNotified = true;
                         longRangeNotified = false;
 
-
-	                    navigator.serviceWorker.ready.then(function(registration) {
-					        registration.showNotification('Vibration Sample 2', {
-					          	body: 'Buzz! Buzz!',
-					          	icon: '../images/touch/chrome-touch-icon-192x192.png',
-					          	vibrate: [200, 100, 200, 100, 200, 100, 200],
-					          	tag: 'vibration-sample'
-					        });
-					    });
-
+                        notify = true;
 
                     } else if (inRangeL && !longRangeNotified){
-                        // new Notification(`'${nearerPoint[0].name.toUpperCase()}' A ${minDistance.toFixed(2)} METROS`, options);
             		    snd = (nearerPoint[0].type === 'warning') ? new Audio('/audio/warning300m.mp3') : new Audio('/audio/300m.mp3');
                         shortRangeNotified = false;
                         mediumRangeNotified = false;
                         longRangeNotified = true;
 
-
-	                    navigator.serviceWorker.ready.then(function(registration) {
-					        registration.showNotification('Vibration Sample 3', {
-					          	body: 'Buzz! Buzz!',
-					          	icon: '../images/touch/chrome-touch-icon-192x192.png',
-					          	vibrate: [200, 100, 200, 100, 200, 100, 200],
-					          	tag: 'vibration-sample'
-					        });
-					    });
-
+                        notify = true;
 
                     } 
 
 
-
-
-
-
-
-                    if(snd != undefined){
+                    if(notify){
+	                    navigator.serviceWorker.ready.then(function(registration) {
+					        registration.showNotification(notificationTitle, options);
+					    });
 	            		snd.play();
                     }
+
+
                 } 
             }
         } else {
