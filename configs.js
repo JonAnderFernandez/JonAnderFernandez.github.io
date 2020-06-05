@@ -5,7 +5,7 @@ properties = {
 
 	shortDistance 		: 100,   // meters
 	mediumDistance 		: 200,   // meters
-	longDistance 		: 1000,    // meters
+	longDistance 		: 300,    // meters
 
 	kmlFiles 			: [
 		'1.kml', 
